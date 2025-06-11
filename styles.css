@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.card h3 {
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
+.card p {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #e74c3c;
+}
+.status {
+    font-size: 16px;
+    color: #555;
+}
+.control-panel {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    text-align: center;
+}
+.control-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+.control-btn:hover {
+    background-color: #2980b9;
+}
+.control-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+.indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.indicator.red { background-color: #e74c3c; }
+.indicator.yellow { background-color: #f1c40f; }
+.indicator.green { background-color: #2ecc71; }
+.indicator.off { background-color: #bdc3c7; }
+.history {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.history th, .history td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.history th {
+    background-color: #2c3e50;
+    color: white;
+}
+@media (max-width: 600px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Greenhouse Control</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Smart Greenhouse Control</h1>
+            <p>Monitor and control your greenhouse environment in real-time</p>
+        </div>
+        <div class="dashboard">
+            <div class="card">
+                <h3>Temperature</h3>
+                <p id="temperature">0.0 °C</p>
+                <div class="status">Status: <span id="tempStatus">Normal</span></div>
+            </div>
+            <div class="card">
+                <h3>Humidity</h3>
+                <p id="humidity">0.0 %</p>
+                <div class="status">Status: <span id="humStatus">Normal</span></div>
+            </div>
+            <div class="card">
+                <h3>Soil Moisture</h3>
+                <p id="soilMoisture">0 %</p>
+                <div class="status">Status: <span id="soilStatus">Normal</span></div>
+            </div>
+            <div class="card">
+                <h3>Light Level</h3>
+                <p id="lightLevel">0 %</p>
+                <div class="status">Status: <span id="lightStatus">Normal</span></div>
+            </div>
+            <div class="card">
+                <h3>Pump</h3>
+                <p id="pumpStatus">OFF</p>
+                <div class="status">Indicator: <span id="pumpIndicator" class="indicator off"></span></div>
+            </div>
+            <div class="card">
+                <h3>Ventilation</h3>
+                <p id="ventStatus">Closed</p>
+                <div class="status">Angle: <span id="ventAngle">0°</span></div>
+            </div>
+            <div class="card">
+                <h3>LED Indicator</h3>
+                <p id="ledStatus">Green</p>
+                <div class="status">Indicator: <span id="ledIndicator" class="indicator green"></span></div>
+            </div>
+        </div>
+        <div class="control-panel">
+            <h2>Manual Control</h2>
+            <button class="control-btn" id="manualWaterBtn" onclick="triggerManualWater()">Start Manual Watering</button>
+            <p>Manual watering runs for 3 seconds</p>
+        </div>
+        <div class="history">
+            <h2>Sensor History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Temperature (°C)</th>
+                        <th>Humidity (%)</th>
+                        <th>Soil Moisture (%)</th>
+                        <th>Light Level (%)</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTable"></tbody>
+            </table>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
